@@ -5,7 +5,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms");
 
 const seeds = [
     {
-        user: "2sick4school",
+        user: {
+            name: "2sick4school",
+            password: "fixme",
+        },
         symptoms: [{
             Nausea: {
                 count: 5,
@@ -24,7 +27,10 @@ const seeds = [
     },
     {
 
-        user: "sick2myStomach",
+        user: {
+            name: "sick2myStomach",
+            password: "painkillers",
+        },
         symptoms: [{
             Nausea: {
                 count: 10,
