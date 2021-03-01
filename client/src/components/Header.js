@@ -11,7 +11,7 @@ function Header() {
             <h1>Welcome!</h1>
          
             <div className="header-btns">
-                <ButtonComponent className="btns" buttonStyle='btn--outline' buttonSize='btn--large'>Log in</ButtonComponent>
+                <ButtonComponent className="btns"></ButtonComponent>
             </div>
         </div>
     )

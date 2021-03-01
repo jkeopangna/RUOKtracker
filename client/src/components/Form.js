@@ -22,7 +22,7 @@ const FormComponent = () => {
         <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={() => window.location.pathname="/userpage"}>
           Submit
         </Button>
       </Form>
