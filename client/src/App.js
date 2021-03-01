@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import UserPage from './components/pages/UserPage';
 import Clinics from './components/pages/Clinics';
 import LogIn from './components/pages/LogIn';
+import ViewCharts from './components/pages/ViewCharts';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
        <Route path="/userpage" exact component ={UserPage} />
        <Route path="/clinics" exact component ={Clinics} />
        <Route path="/login" exact component={LogIn} />
+       <Route path="/viewcharts" exact component={ViewCharts} />
      </Switch>
     </Router>
     </>
