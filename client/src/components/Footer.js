@@ -2,6 +2,7 @@ import React from 'react';
 import {ButtonComponent} from '../components/Button';
 import './Footer.css';
 import {Link} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
 function Footer() {
 
@@ -32,9 +33,7 @@ function Footer() {
                 <div className="footer-link-wrapper">
                     <div className="footer-link-items">
                         <h2>More Info </h2>
-                        {/* <Link to="/clinics" className="nav-links" onClick={closeMobileMenu}>
-                            Log-in
-                        </Link> */}
+                        <Button variant="secondary" bsSize="small" onClick={() => window.location.pathname="/clinics"}>Find a Clinic</Button>
                     </div>
                 </div>
             </div>
