@@ -20,17 +20,12 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
-=======
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
->>>>>>> Stashed changes
     "mongoose": "^5.11.18",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",

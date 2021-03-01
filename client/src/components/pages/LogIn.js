@@ -1,17 +1,21 @@
 import React from 'react'
 import '../../App.css';
-import Header from '../Header';
 import Footer from '../Footer';
 import FormComponent from '../Form';
 
 
 
-
-export default function Home () {
+export default function LogIn () {
     return (
         <>
-        <Header />
+
+        <div className="login">
+
+        <FormComponent />
+        </div>
         <Footer />
+   
         </>
-    )
-}
+        )
+    };
+

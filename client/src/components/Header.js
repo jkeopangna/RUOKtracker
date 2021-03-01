@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from './Button';
+import {ButtonComponent} from './Button';
 import './Header.css';
 import '../App.css'
 
@@ -11,7 +11,7 @@ function Header() {
             <h1>Welcome!</h1>
          
             <div className="header-btns">
-                <Button className="btns" buttonStyle='btn--outline' buttonSize='btn--large'>Log in</Button>
+                <ButtonComponent className="btns" buttonStyle='btn--outline' buttonSize='btn--large'>Log in</ButtonComponent>
             </div>
         </div>
     )

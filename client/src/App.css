@@ -7,7 +7,8 @@
 
 .home,
 .userpage,
-.clinics {
+.clinics,
+.login {
   display: flex;
   height: 90vh;
   align-items: center;
