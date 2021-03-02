@@ -1,5 +1,5 @@
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: linear-gradient(#990000);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -10,6 +10,10 @@
   z-index: 999;
 }
 
+.color-nav {
+  background-color: rgb(69, 72, 83);
+}
+
 .navbar-container {
   display: flex;
   justify-content: center;
@@ -18,10 +22,13 @@
   max-width: 1500px;
 }
 
-/* .navbar-logo {
-    justify-self: start;
-    size: 200px 200px;
-  } */
+/* .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand > img {
+  padding: 7px 14px;
+} */
 
 .nav-menu {
   display: grid;

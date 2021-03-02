@@ -6,8 +6,8 @@ import {Navbar, Nav} from 'react-bootstrap';
 function NavbarComponent() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Navbar.Brand href="/">R.U.O.K. Health Tracker</Navbar.Brand>
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="color-nav">
+  <Navbar.Brand href="/"><img src="./images/logoIcon.png" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">

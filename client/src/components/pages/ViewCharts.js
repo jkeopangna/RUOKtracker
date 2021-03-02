@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import Footer from '../Footer';
-import PieChart from '../PieChart';
+import LineChart from '../LineChart';
 import { Container } from 'react-bootstrap';
 
 
@@ -17,7 +17,7 @@ export default function ViewCharts () {
       <h3>View Symptoms</h3>
       <Container fluid className="chartcontainer">
 
-        <PieChart />
+        <LineChart />
 
       </Container>
 
