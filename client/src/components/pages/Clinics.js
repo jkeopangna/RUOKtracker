@@ -10,7 +10,7 @@ export default function Clinics () {
 
         <div className="clinics">
             <h1>FIND A CLINIC PAGE GOES HERE</h1>
-            <p>Jules needs to move this link into the Footer</p>
+            
             
         </div>
         
