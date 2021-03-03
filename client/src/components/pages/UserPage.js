@@ -2,7 +2,7 @@ import React from 'react'
 import '../../App.css';
 import Footer from '../Footer';
 import {Jumbotron, Button, Form, Row, Col} from 'react-bootstrap';
-import '../../App.css'
+
  
 
 
@@ -17,7 +17,7 @@ export default function UserPage () {
                 <div className="userbtns">
                     <Row>
 
-                        <Button variant="secondary" bsSize="small" onClick={() => window.location.pathname="/addsymptom"}>Add Symptoms</Button>
+                        <Button variant="secondary" bsSize="small" onClick={() => window.location.pathname="/addsymptom"}>Log Symptoms</Button>
                         <Button variant="secondary" bsSize="small" onClick={() => window.location.pathname="/viewcharts"}>View Previous Entries</Button>
 
                     </Row>
