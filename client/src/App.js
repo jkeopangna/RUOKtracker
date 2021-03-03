@@ -9,12 +9,15 @@ import LogIn from './components/pages/LogIn';
 import ViewCharts from './components/pages/ViewCharts';
 
 function App() {
+//   const [user, updateUser] = useState({})
+  //then will have to add props to each page and pass them down 
   return (
     <>
     <Router>
      <NavbarComponent />
      <Switch>
-       <Route path="/" exact component ={Home} />
+       <Route path="/" exact component={Home} />
+       {/* <Route exact path="/"><Home updateUser={updateUser}/></Route> */}
        <Route path="/userpage" exact component ={UserPage} />
        <Route path="/clinics" exact component ={Clinics} />
        <Route path="/login" exact component={LogIn} />
