@@ -10,9 +10,7 @@ const validateLoginInput = require("../routes/login");
 const User = require("../models/user");
 
 
-// @route POST api/users/register
-// @desc Register user
-// @access Public
+
 router.post("/register", (req, res) => {
     // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -21,7 +19,7 @@ router.post("/register", (req, res) => {
       return res.status(400).json(errors);
     }
   User.findOne({ username: req.body.username}).then(user => {
-      if (user) {
+      if (user) {gi
         return res.status(400).json({ username: "Username already exists" });
       } else {
         const newUser = new User({
@@ -42,3 +40,59 @@ router.post("/register", (req, res) => {
       }
     });
   });
+
+
+
+// @route POST api/users/login
+// @desc Login user and return JWT token
+// @access Public
+router.post("/login", (req, res) => {
+    // Form validation
+  const { errors, isValid } = validateLoginInput(req.body);
+  // Check validation
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+  const email = req.body.username;
+    const password = req.body.password;
+  // Find user by email
+    User.findOne({ username }).then(user => {
+      // Check if user exists
+      if (!user) {
+        return res.status(404).json({ usernamenotfound: "username not found" });
+      }
+  // Check password
+      bcrypt.compare(password, user.password).then(isMatch => {
+        if (isMatch) {
+          // User matched
+          // Create JWT Payload
+          const payload = {
+            id: user.id,
+            name: user.name
+          };
+  // Sign token
+          jwt.sign(
+            payload,
+            keys.secretOrKey,
+            {
+              expiresIn: 31556926 // 1 year in seconds
+            },
+            (err, token) => {
+              res.json({
+                success: true,
+                token: "Bearer " + token
+              });
+            }
+          );
+        } else {
+          return res
+            .status(400)
+            .json({ passwordincorrect: "Password incorrect" });
+        }
+      });
+    });
+  });
+
+
+
+  module.exports = router;
