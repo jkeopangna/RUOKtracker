@@ -1,6 +1,6 @@
 .header-container {
-  background: url("./loading.jpg") center center/cover no-repeat;
-  background-color: grey;
+  background: url("./whiteBkgrd.jpg");
+  background-color: #fff;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -11,9 +11,14 @@
   content: center;
 }
 
+.video {
+  height: 100%;
+  width: 100%;
+}
+
 .header-container > h1 {
   margin-top: 50px;
-  color: #fff;
+  color: black;
   font-size: 80px;
 }
 
