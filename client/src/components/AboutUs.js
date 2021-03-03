@@ -11,10 +11,10 @@ function AboutComponent() {
         <div className='about-container'>
                 <h1>About us</h1>
          
-                <p>R.U.O.K Health Tracker is designed as a tool for anyone to keep a log of symptoms no matter how long they have been experiencing them. Symptom tracking made simple with our easy to use diary, with entries appearing automatically on charts at the touch of a button!</p>
+                <p>R.U.O.K Health Tracker is designed as a tool for anyone to keep a log of symptoms no matter how long they have been experiencing them.Symptom tracking made simple with our easy to use diary, with entries appearing automatically on charts at the touch of a button!</p>
             <div className="about-image">
 
-                <img src="./images/journal.jpg"></img>
+                <img src="./images/healthheart.jpg" alt="caring-hands"></img>
 
             </div>
 

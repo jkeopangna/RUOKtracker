@@ -3,7 +3,6 @@ import {Form, Button} from 'react-bootstrap';
 
 
 
-
 const FormComponent = () => {
 
     return(
@@ -23,7 +22,7 @@ const FormComponent = () => {
         <Form.Group controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="dark" type="submit" onClick={() => window.location.pathname="/userpage"}>
+        <Button variant="dark" onClick={() => window.location.pathname="/userpage"}>
           Submit
         </Button>
       </Form>

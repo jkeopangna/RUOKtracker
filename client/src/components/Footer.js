@@ -1,7 +1,6 @@
 import React from 'react';
 import {ButtonComponent} from '../components/Button';
 import './Footer.css';
-import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 function Footer() {
@@ -26,14 +25,19 @@ function Footer() {
             <div className="footer-links">
                 <div className="footer-link-wrapper">
                     <div className="footer-link-items">
-                        <h2>Social Media</h2>
-                        <Link></Link>
+                        <h3>Social Media</h3>
+                        <div className="socialbtns">
+                            <i class="fab fa-twitter fa-2x"></i> 
+                            <i class="fab fa-facebook fa-2x"></i>
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </div>
                     </div>
                 </div>
                 <div className="footer-link-wrapper">
                     <div className="footer-link-items">
-                        <h2>More Info </h2>
-                        <Button variant="secondary" bsSize="small" onClick={() => window.location.pathname="/clinics"}>Find a Clinic</Button>
+                        <h3>Additional Information </h3>
+                        <Button variant="secondary" bsSize="xssmall" onClick={() => window.location.pathname="/clinics"}>Find a Clinic</Button>
+                        <Button className="resourcesbtn" variant="secondary" bsSize="xssmall"  onClick={()=> window.location.pathname="/resources"}>Resources</Button>
                     </div>
                 </div>
             </div>

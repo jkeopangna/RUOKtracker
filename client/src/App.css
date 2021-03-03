@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* add font family? */
+  font-family: "Adamina", serif;
 }
 
 .home,
@@ -18,21 +18,80 @@
   font-size: 3rem;
 }
 
+/* User Page Styles */
+
 .symptomForm {
   margin-top: 20px;
+  margin-left: 20px;
   display: flex;
   height: 90vh;
   align-items: left;
-  justify-content: left;
+  justify-content: center;
   font-size: 20px;
+}
+
+.userbtn1,
+.userbtn2 {
+  margin: 3px;
+}
+
+.form-check {
+  margin-right: 4px;
 }
 
 .form-label {
   margin-right: 2px;
 }
 
+.severity {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Resources Page Styles */
+
+.resHomebtn {
+  margin-top: 10px;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.res-header {
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.res-header > p {
+  font-size: 20px;
+}
+
+.list-group {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+/* Charts Page Styles */
+
 .chartcontainer {
   margin-bottom: 100px;
   margin-top: 100px;
   max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chartbtnH,
+.chartbtnS {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  margin-top: 8px;
 }

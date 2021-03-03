@@ -8,7 +8,7 @@ import '../App.css';
 function Header() {
     return (
         <div className='header-container'>
-            <h1>Welcome!</h1>
+            <h1>Welcome to Your Health Tracker!</h1>
             <video src="./videos/ruok.mp4" autoPlay muted />
          
             <div className="header-btns">
