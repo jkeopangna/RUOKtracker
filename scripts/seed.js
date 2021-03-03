@@ -12,15 +12,15 @@ const seeds = [
         symptoms: [{
             Nausea: {
                 count: 5,
-                severity: 8,
+                severity: 3,
             },
             BodyPain: {
                 count: 3,
-                severity: 6
+                severity: 4
             },
             Fatigue: {
-                count: 6,
-                severity: 5,
+                count: 5,
+                severity: 2,
             }
         }],
         date: new Date(Date.now())

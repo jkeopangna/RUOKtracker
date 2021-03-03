@@ -1,0 +1,3 @@
+export const UPDATE_SYMPTOMS = 'UPDATE_SYMPTOMS';
+export const ADD_SYMPTOMS = 'ADD_SYMPTOMS';
+export const LOADING = 'LOADING';

@@ -7,6 +7,7 @@ import UserPage from './components/pages/UserPage';
 import Clinics from './components/pages/Clinics';
 import LogIn from './components/pages/LogIn';
 import ViewCharts from './components/pages/ViewCharts';
+import CreateForm from './components/pages/Symptoms';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
        <Route path="/clinics" exact component ={Clinics} />
        <Route path="/login" exact component={LogIn} />
        <Route path="/viewcharts" exact component={ViewCharts} />
+       <Route path="/symptoms" exact component={CreateForm} />
      </Switch>
     </Router>
     </>
