@@ -3,8 +3,6 @@ import '../../App.css';
 import Footer from '../Footer';
 import {Jumbotron, Button, Form, Row, Col} from 'react-bootstrap';
 
- 
-
 
 
 export default function UserPage () {
