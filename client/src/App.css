@@ -33,9 +33,36 @@
   margin: 3px;
 }
 
+.resHomebtn {
+  margin-top: 10px;
+}
+
 .severity {
   display: flex;
   flex-direction: row;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.res-header {
+  justify-content: center;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.res-header > p {
+  font-size: 20px;
+}
+
+.list-group {
+  margin-top: 20px;
+  font-size: 25px;
 }
 
 .form-check {

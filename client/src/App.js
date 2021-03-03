@@ -7,6 +7,7 @@ import UserPage from './components/pages/UserPage';
 import Clinics from './components/pages/Clinics';
 import LogIn from './components/pages/LogIn';
 import ViewCharts from './components/pages/ViewCharts';
+import Resources from './components/pages/Resources';
 
 function App() {
 //   const [user, updateUser] = useState({})
@@ -22,6 +23,7 @@ function App() {
        <Route path="/clinics" exact component ={Clinics} />
        <Route path="/login" exact component={LogIn} />
        <Route path="/viewcharts" exact component={ViewCharts} />
+       <Route path="/resources" exact component={Resources} />
      </Switch>
     </Router>
     </>
