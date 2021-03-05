@@ -2,13 +2,17 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const passport = require("passport");
+//const passport = require("./config/passport");
+
+const users = require("./routes/users");
 
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 //JK// - Connect to Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/TestSymptoms");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,15 +21,20 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-// Define API routes here
-const routes = require("./routes");
-app.use(routes);
+else {
+  app.use(express.static("public"));
+}
 
 // Passport middleware
 app.use(passport.initialize());
+
+// Define API routes here
+//const routes = require("./routes");
+//app.use(routes);
+
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 app.use("/api/users", users);
 

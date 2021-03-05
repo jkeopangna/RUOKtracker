@@ -1,15 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/TestSymptoms");
 
-const seeds = [
+const testSeeds = [
     {
-        user: {
-            name: "2sick4school",
-            password: "fixme",
-        },
-        symptoms: [{
+        hisSymptoms: [{
             Nausea: 3,
             BodyPain: 4,
             Fatigue: 2,
@@ -17,12 +13,7 @@ const seeds = [
         }]
     },
     {
-
-        user: {
-            name: "sick2myStomach",
-            password: "painkillers",
-        },
-        symptoms: [{
+        herSymptoms: [{
             Nausea: 10,
             BodyPain: 6,
             Fatigue: 4,
@@ -32,7 +23,7 @@ const seeds = [
 ];
 
 db.Post.remove({})
-.then(() => db.Post.collection.insertMany(seeds))
+.then(() => db.Post.collection.insertMany(testSeeds))
 .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
