@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import Footer from '../Footer';
-import LineChart from '../LineChart';
+import PieChart from '../PieChart';
 import { Container, Button } from 'react-bootstrap';
 
 
@@ -10,6 +10,8 @@ export default function ViewCharts () {
 
     //write logic to control which chart is viewed based on user selection
 
+    //fetch call here?
+
     return (
         <>
     
@@ -17,7 +19,7 @@ export default function ViewCharts () {
       <Container fluid className="chartcontainer">
       <h3>View Symptoms</h3>
 
-        <LineChart />
+        <PieChart />
 
       <Button className="chartbtnH" variant="secondary" bsSize="small" onClick={() => window.location.pathname="/"}>Home</Button>
       <Button className="chartbtnS" variant="secondary" bsSize="small" onClick={() => window.location.pathname="/userpage"}>Back to New Symptom</Button>
