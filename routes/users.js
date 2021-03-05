@@ -2,14 +2,12 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys"); //move to .env file once running.
+const keys = require("../config/keys"); //move to .env file once running.
 // Load input validation
 const validateRegisterInput = require("../routes/register");
-const validateLoginInput = require("../routes/login");
+const validateLoginInput = require("..\/routes/login");
 // Load User model
 const User = require("../models/user");
-
-
 
 router.post("/register", (req, res) => {
     // Form validation
@@ -19,7 +17,7 @@ router.post("/register", (req, res) => {
       return res.status(400).json(errors);
     }
   User.findOne({ username: req.body.username}).then(user => {
-      if (user) {gi
+      if (user) {
         return res.status(400).json({ username: "Username already exists" });
       } else {
         const newUser = new User({
@@ -43,9 +41,7 @@ router.post("/register", (req, res) => {
 
 
 
-// @route POST api/users/login
-// @desc Login user and return JWT token
-// @access Public
+
 router.post("/login", (req, res) => {
     // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
@@ -53,9 +49,9 @@ router.post("/login", (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     }
-  const email = req.body.username;
+  const username = req.body.username;
     const password = req.body.password;
-  // Find user by email
+  // Find user by username
     User.findOne({ username }).then(user => {
       // Check if user exists
       if (!user) {
