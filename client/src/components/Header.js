@@ -1,17 +1,18 @@
 import React from 'react';
 import {ButtonComponent} from './Button';
 import './Header.css';
-import '../App.css'
+import '../App.css';
+
 
 
 function Header() {
     return (
         <div className='header-container'>
-
-            <h1>Welcome!</h1>
+            <h1>Welcome to Your Health Tracker!</h1>
+            <video src="./videos/ruok.mp4" autoPlay muted />
          
             <div className="header-btns">
-                <ButtonComponent className="btns" buttonStyle='btn--outline' buttonSize='btn--large'>Log in</ButtonComponent>
+                <ButtonComponent className="btns"></ButtonComponent>
             </div>
         </div>
     )

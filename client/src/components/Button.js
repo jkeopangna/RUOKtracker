@@ -1,28 +1,15 @@
 import React from 'react';
 import './Button.css';
-import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 
-const STYLES = ['btn--primary', 'btn--outline'];
-
-const SIZES = ['btn--medium', 'btn--large'];
-
-export const ButtonComponent = ({children, type, onClick, buttonStyle, buttonSize}) => {
-    const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
-
-    const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+export const ButtonComponent = () => {
+ 
 
     return (
-        <Link to="/login" className='btn-mobile'>
-            <button
-            className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-            onClick={onClick}
-            type={type}
-            >
-                {children}
-            </button>
-        </Link>
+        <Button variant="secondary" size="lg" onClick={() => window.location.pathname="/login"}>
+            Sign-In
+      </Button>
     )
 
 };
