@@ -31,8 +31,8 @@ const seeds = [
     }
 ];
 
-db.Post.remove({})
-.then(() => db.Post.collection.insertMany(seeds))
+db.Symptoms.remove({})
+.then(() => db.Symptoms.collection.insertMany(seeds))
 .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

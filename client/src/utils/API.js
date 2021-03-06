@@ -1,11 +1,11 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export default {
+export default {
 
-// //JK// - Post the data from when a user enters symptoms
-// logSymptoms: function() {
-//     return axios.post("/api/userpage")
-// },
+//JK// - Post the data from when a user enters symptoms
+logSymptoms: function(symptoms) {
+    return axios.post("/api/userpage", symptoms)
+},
 
 // //JK// - Get the data to view the charts
 // getSymptoms: function() {
@@ -22,4 +22,4 @@
 //     return axios.post("/api/id")
 // },
 
-// }
+}
