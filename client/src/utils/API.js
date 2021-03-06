@@ -8,9 +8,9 @@ logSymptoms: function(symptoms) {
 },
 
 // //JK// - Get the data to view the charts
-// getSymptoms: function() {
-//     return axios.get("/api/viewcharts")
-// },
+getSymptoms: function() {
+    return axios.get("/api/viewcharts")
+},
 
 // //JK// - Get the data when someone logs in
 // logIn: function() {
