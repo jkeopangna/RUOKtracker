@@ -9,8 +9,8 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-    findById: function(req, res) {
-        db.Symptoms.findById(req.params.id)
+    find: function(req, res) {
+        db.Symptoms.find()
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
