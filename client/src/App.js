@@ -8,7 +8,7 @@ import Clinics from './components/pages/Clinics';
 import LogIn from './components/pages/LogIn';
 import ViewCharts from './components/pages/ViewCharts';
 import Resources from './components/pages/Resources';
-import ChartTest from './components/Chart';
+import Chart from './components/Chart';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
        <Route path="/userpage" exact component ={UserPage} />
        <Route path="/clinics" exact component ={Clinics} />
        <Route path="/login" exact component={LogIn} />
-       <Route path="/viewcharts" exact component={ChartTest} />
+       <Route path="/viewcharts" exact component={Chart} />
        <Route path="/resources" exact component={Resources} />
      </Switch>
     </Router>
