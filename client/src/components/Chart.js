@@ -1,13 +1,13 @@
 import React from 'react';
 import api from '../utils/API';
 import { useEffect, useState } from 'react';
-import { Line} from 'react-chartjs-2';
+import { Line, Bar, Pie} from 'react-chartjs-2';
 import {Container, Button} from 'react-bootstrap';
 import Footer from './Footer';
 import '../App.css'
 
 
-
+//NEED TO FIND A WAY TO RENDER BY USER
 // import { response } from 'express';
 
 export default function Chart() {
@@ -27,7 +27,6 @@ export default function Chart() {
                     bodypain.push(dataObj.symptoms[0].BodyPain);
                     fatigue.push(dataObj.symptoms[0].Fatigue);
                     nausea.push(dataObj.symptoms[0].Nausea)
-                    // severity.push(dataObj.symptoms[0]);
                 }
                 // console.log(bodypain);
                 // console.log(severity);
@@ -72,7 +71,7 @@ export default function Chart() {
         <Container fluid className="chartcontainer">
         <h3>Dashboard</h3>
   
-          <Line data={dataChart}
+          <Bar data={dataChart}
           height={300}
           width={500}
           options={{
@@ -80,7 +79,7 @@ export default function Chart() {
               scales: {
                   yAxes: [{
                       ticks: {
-                          beginAtZero: true
+                          beginAtZero: true,
                       }
                   }]
               }

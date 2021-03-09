@@ -10,7 +10,6 @@
 .clinics,
 .login,
 .userpage {
-  /* background-color: lightcyan; */
   display: flex;
   height: 90vh;
   align-items: center;
