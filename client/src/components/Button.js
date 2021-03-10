@@ -7,7 +7,7 @@ export const ButtonComponent = () => {
  
 
     return (
-        <Button variant="secondary" size="lg" onClick={() => window.location.pathname="/login"}>
+        <Button className="signin" variant="secondary" size="lg" onClick={() => window.location.pathname="/login"}>
             Sign-In
       </Button>
     )
