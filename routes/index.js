@@ -13,7 +13,14 @@ router
     //Get symptom data from DB
     .get(symptomsController.find)
 
-//JK// - Routes for the creating a user
+    //JK// - Routes for the creating a user
       // AND getting a user's data when logged in 
+
+//JK// - Routes that match with /signup
+router
+.route('/api/signup')
+    //Create new User for DB
+    .post(symptomsController.create)
+
 
 module.exports = router;

@@ -13,7 +13,7 @@ function NavbarComponent() {
     <Nav className="mr-auto">
     </Nav>
     <Nav>
-      <Nav.Link href="/login">Sign-up</Nav.Link>
+      <Nav.Link href="/signup">Sign-up</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

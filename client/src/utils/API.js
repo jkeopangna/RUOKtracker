@@ -17,9 +17,9 @@ getSymptoms: function() {
 //     return axios.get("")
 // },
 
-// //JK// - Add a new user when someone signs up
-// newUser: function() {
-//     return axios.post("/api/id")
-// },
+//JK// - Add a new user when someone signs up
+newUser: function(user) {
+    return axios.post("/api/signup", user)
+},
 
 }
