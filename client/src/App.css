@@ -7,7 +7,7 @@
 
 .home,
 .userpage,
-.clinics,
+/* .clinics, */
 .login,
 .userpage {
   /* background-color: lightcyan; */
@@ -16,6 +16,15 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.clinics {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-top: -180px;
 }
 
 /* User Page Styles */
@@ -94,4 +103,13 @@
   justify-content: center;
   width: 20%;
   margin-top: 8px;
+}
+
+.map-container {
+  display: flex;
+  position: relative;
+  width: 50vw;
+  height: 65vh;
+  justify-content: center;
+  margin-top: -180px;
 }
