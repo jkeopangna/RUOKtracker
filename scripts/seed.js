@@ -10,20 +10,11 @@ const seeds = [
             password: "fixme",
         },
         symptoms: [{
-            Nausea: {
-                count: 5,
-                severity: 8,
-            },
-            BodyPain: {
-                count: 3,
-                severity: 6
-            },
-            Fatigue: {
-                count: 6,
-                severity: 5,
-            }
-        }],
-        date: new Date(Date.now())
+            Nausea: 3,
+            BodyPain: 4,
+            Fatigue: 2,
+            date: new Date(Date.now())
+        }]
     },
     {
 
@@ -32,25 +23,16 @@ const seeds = [
             password: "painkillers",
         },
         symptoms: [{
-            Nausea: {
-                count: 10,
-                severity: 10,
-            },
-            BodyPain: {
-                count: 6,
-                severity: 6,
-            },
-            Fatigue: {
-                count: 4,
-                severity: 4,
-            }
-        }],
-        date: new Date(Date.now())
+            Nausea: 10,
+            BodyPain: 6,
+            Fatigue: 4,
+            date: new Date(Date.now())
+        }]
     }
 ];
 
-db.Post.remove({})
-.then(() => db.Post.collection.insertMany(seeds))
+db.Symptoms.remove({})
+.then(() => db.Symptoms.collection.insertMany(seeds))
 .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //JK// - Connect to Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -28,8 +28,8 @@ else {
 app.use(passport.initialize());
 
 // Define API routes here
-//const routes = require("./routes");
-//app.use(routes);
+const routes = require("./routes");
+app.use(routes);
 
 // Passport config
 require("./config/passport")(passport);

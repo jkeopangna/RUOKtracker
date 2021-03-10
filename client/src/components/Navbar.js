@@ -6,14 +6,14 @@ import {Navbar, Nav} from 'react-bootstrap';
 function NavbarComponent() {
     return (
 
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="color-nav">
+        <Navbar sticky="top" collapseOnSelect expand="lg" variant="dark" className="color-nav">
   <Navbar.Brand href="/"><img src="./images/logoIcon.png" alt="RUOK-icon" /></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
     </Nav>
     <Nav>
-      <Nav.Link href="/login">Sign-up</Nav.Link>
+      <Nav.Link href="/signup">Sign-up</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
