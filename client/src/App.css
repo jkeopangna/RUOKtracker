@@ -10,7 +10,6 @@
 .clinics,
 .login,
 .userpage {
-  /* background-color: lightcyan; */
   display: flex;
   height: 90vh;
   align-items: center;
@@ -20,9 +19,25 @@
 
 /* User Page Styles */
 
+.userpage {
+  max-width: 100%;
+  height: auto;
+}
+
+.userbtns > h2 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 80px;
+}
+
+.userbtns > p {
+  font-size: 15px;
+  margin-left: 80px;
+}
+
 .symptomForm {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 90px;
   display: flex;
   height: 90vh;
   align-items: left;
@@ -33,6 +48,7 @@
 .userbtn1,
 .userbtn2 {
   margin: 3px;
+  margin-left: 80px;
 }
 
 .form-check {
@@ -94,4 +110,14 @@
   justify-content: center;
   width: 20%;
   margin-top: 8px;
+}
+
+/* Sidebar Styles */
+
+.useritems {
+  /* display: flex; */
+  max-width: 100%;
+  height: auto;
+  /* margin-left: 20px; */
+  margin-right: 25px;
 }

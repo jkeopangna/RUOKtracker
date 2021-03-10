@@ -6,11 +6,12 @@ import { Container, Button } from 'react-bootstrap';
 
 
 
+
 export default function ViewCharts () {
 
     //write logic to control which chart is viewed based on user selection
 
-    //fetch call here?
+    // API.Chart.fetchData();
 
     return (
         <>
