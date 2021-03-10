@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+
 import {Form, Button } from 'react-bootstrap';
 import API from "../utils/API";
-
 
 const NewUserComponent = () => {
 
@@ -58,13 +58,10 @@ const NewUserComponent = () => {
           </Form.Group>
         </Form.Group>
       </Form.Group>
-        
-
         <Button variant="dark" onClick={handleFormSubmit}>
           Submit
         </Button>
       </Form>
-      
     )
 }
 
