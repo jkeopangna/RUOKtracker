@@ -19,9 +19,12 @@ export default function UserPage () {
         event.preventDefault();
         console.log(formObject)
         API.logSymptoms({
-            Nausea: formObject.Nausea,
-            BodyPain: formObject.BodyPain,
-            Fatigue: formObject.Fatigue
+            symptoms: [{
+                Nausea: formObject.Nausea,
+                BodyPain: formObject.BodyPain,
+                Fatigue: formObject.Fatigue
+            }]
+    
         })
         .then(console.log('Got symptoms?'))
         .then((response) => response.json())

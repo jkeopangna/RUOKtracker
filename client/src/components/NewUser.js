@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Form, Button} from 'react-bootstrap';
+
+import {Form, Button } from 'react-bootstrap';
 import API from "../utils/API";
 
 const NewUserComponent = () => {
@@ -29,9 +30,9 @@ const NewUserComponent = () => {
       .catch(err => console.log(err));
 
       // document.getElementById('nausea').value = '';
-      document.getElementById('username').value = '';
-      document.getElementById('password').value = '';
-
+      // document.getElementById('username').value = '';
+      // document.getElementById('password').value = '';
+      window.location.pathname = '/userpage';
     }
 
 
@@ -57,13 +58,10 @@ const NewUserComponent = () => {
           </Form.Group>
         </Form.Group>
       </Form.Group>
-        
         <Button variant="dark" onClick={handleFormSubmit}>
           Submit
         </Button>
-      
       </Form>
-      
     )
 }
 
