@@ -3,6 +3,7 @@ import '../../App.css';
 import Footer from '../Footer';
 import {Jumbotron, Button, Form, Row, Col} from 'react-bootstrap';
 import API from "../../utils/API";
+import SidebarComponent from '../Sidebar';
 
 
 export default function UserPage () {
@@ -33,11 +34,13 @@ export default function UserPage () {
 
     return (
         <>
-
+        
         <Jumbotron fluid>
         <div className="userpage">
             <div classname="useritems">
                 <div className="userbtns">
+            <h2>Symptom Tracking</h2>
+            <p>Enter any symptoms you wish to track on the form below, and click 'log symptoms' to submit.</p>
                     <Row>
 
                         <Button className="userbtn1"variant="secondary" bsSize="small" onClick={() => window.location.pathname="/addsymptom"}>Go Back</Button>
@@ -46,7 +49,9 @@ export default function UserPage () {
                     </Row>
 
                 </div>
+                
             <div className="symptomForm">
+                
                     <Row>
                         <Form>
                             <Form.Group as={Row} controlId="formHorizontalSymp">
@@ -91,7 +96,7 @@ export default function UserPage () {
             </div>
             </div>
 
-                    
+            <div className="usersidebar"><SidebarComponent /></div> 
                     
             </div>
         </ Jumbotron>

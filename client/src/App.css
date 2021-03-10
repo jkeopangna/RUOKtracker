@@ -19,6 +19,15 @@
 
 /* User Page Styles */
 
+.userbtns > h2 {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.userbtns > p {
+  font-size: 15px;
+}
+
 .symptomForm {
   margin-top: 20px;
   margin-left: 20px;
@@ -93,4 +102,10 @@
   justify-content: center;
   width: 20%;
   margin-top: 8px;
+}
+
+/* Sidebar Styles */
+
+.useritems {
+  margin-left: 20px;
 }
