@@ -6,7 +6,7 @@ import API from "../../utils/API";
 
 
 export default function UserPage () {
-    const [symptoms, logSymptoms] = useState([])
+
     const [formObject, setFormObject] = useState({})
 
     function handleInputChange(event) {
@@ -24,12 +24,14 @@ export default function UserPage () {
         })
         .then(console.log('Got symptoms?'))
         .then((response) => response.json())
+        .then(alert('Symptoms logged!'))
         .catch(err => console.log(err));
+
+    document.getElementById('nausea').value = '';
+    document.getElementById('bodypain').value = '';
+    document.getElementById('fatigue').value = '';
     }
 
-    // document.getElementById('nausea').value = '';
-    // document.getElementById('bodypain').value = '';
-    // document.getElementById('fatigue').value = '';
 
     return (
         <>
@@ -54,7 +56,7 @@ export default function UserPage () {
                                 Nausea:
                                 </Form.Label>
                                 <Col sm={10}>
-                                <Form.Control type="input" name="Nausea" onChange={handleInputChange} nausea={formObject.Nausea} placeholder="On a scale of 1-10, how severe is the symptom?" />
+                                <Form.Control type="input" id="nausea" name="Nausea" onChange={handleInputChange} nausea={formObject.Nausea} placeholder="On a scale of 1-10, how severe is the symptom?" />
                                 </Col>
                             </Form.Group>
 
@@ -63,7 +65,7 @@ export default function UserPage () {
                                 Body Pain:
                                 </Form.Label>
                                 <Col sm={10}>
-                                <Form.Control type="input" name="BodyPain" onChange={handleInputChange} bodypain={formObject.bodypain} placeholder="On a scale of 1-10, how severe is the symptom?" />
+                                <Form.Control type="input" id="bodypain" name="BodyPain" onChange={handleInputChange} bodypain={formObject.bodypain} placeholder="On a scale of 1-10, how severe is the symptom?" />
                                 </Col>
                             </Form.Group>
 
@@ -72,7 +74,7 @@ export default function UserPage () {
                                 Fatigue:
                                 </Form.Label>
                                 <Col sm={10}>
-                                <Form.Control type="input" name="Fatigue" onChange={handleInputChange} fatigue={formObject.Fatigue} placeholder="On a scale of 1-10, how severe is the symptom?" />
+                                <Form.Control type="input" id="fatigue" name="Fatigue" onChange={handleInputChange} fatigue={formObject.Fatigue} placeholder="On a scale of 1-10, how severe is the symptom?" />
                                 </Col>
                             </Form.Group>
 

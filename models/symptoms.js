@@ -7,9 +7,9 @@ const symptomSchema = new Schema ({
         password: {type: String }
     },
     symptoms: { type: Array },
-    Nausea: {type: Number, required: true },
-    BodyPain: {type: Number, required: true },
-    Fatigue: {type: Number, required: true}, 
+    Nausea: {type: Number },
+    BodyPain: {type: Number },
+    Fatigue: {type: Number }, 
     date: { type: Date, default: Date.now }
 });
 
