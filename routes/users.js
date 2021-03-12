@@ -10,8 +10,12 @@ const validateLoginInput = require("..\/routes/login");
 const User = require("../models/user");
 
 router.post("/register", (req, res) => {
+  console.log("the register works")
     // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
+
+  console.log('err==>>', errors, 'isvall==>>', isValid)
+
   // Check validation
     if (!isValid) {
       return res.status(400).json(errors);
@@ -32,7 +36,7 @@ router.post("/register", (req, res) => {
             newUser
               .save()
               .then(user => res.json(user))
-              .catch(err => console.log(err));
+              .catch(err => res.send(err));
           });
         });
       }
@@ -43,6 +47,7 @@ router.post("/register", (req, res) => {
 
 
 router.post("/login", (req, res) => {
+  console.log("the login works")
     // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
   // Check validation

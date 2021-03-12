@@ -22,4 +22,12 @@ newUser: function(user) {
     return axios.post("/api/signup", user)
 },
 
+logIn: function(user) {
+     return axios.post("/api/users/login", user)
+ },
+ 
+ Register: function(user) {
+    return axios.post("/api/users/register", user)
+},
+
 }

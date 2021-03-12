@@ -17,18 +17,15 @@ export default function UserPage () {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        console.log(formObject)
         API.logSymptoms({
             symptoms: [{
                 Nausea: formObject.Nausea,
                 BodyPain: formObject.BodyPain,
                 Fatigue: formObject.Fatigue
-            }]
-    
+            }],
+            user: sessionStorage.getItem('userId')
         })
-        .then(console.log('Got symptoms?'))
-        .then((response) => response.json())
-        .then(alert('Symptoms logged!'))
+        .then(() => alert('Symptoms logged!'))
         .catch(err => console.log(err));
 
     document.getElementById('nausea').value = '';
