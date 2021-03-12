@@ -2,14 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const symptomSchema = new Schema ({
-    user: { 
-        name: {type: String },
-        password: {type: String }
-    },
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     symptoms: { type: Array },
-    Nausea: {type: Number },
-    BodyPain: {type: Number },
-    Fatigue: {type: Number }, 
+    // Nausea: {type: Number },
+    // BodyPain: {type: Number },
+    // Fatigue: {type: Number }, 
     date: { type: Date, default: Date.now }
 });
 
