@@ -7,7 +7,6 @@ import UserPage from './components/pages/UserPage';
 import Clinics from './components/pages/Clinics';
 import LogIn from './components/pages/LogIn';
 import Signup from './components/pages/Signup'
-import ViewCharts from './components/pages/ViewCharts';
 import Resources from './components/pages/Resources';
 import Chart from './components/Chart';
 

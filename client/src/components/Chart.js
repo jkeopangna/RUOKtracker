@@ -18,6 +18,8 @@ export default function Chart() {
             let bodypain = [];
             let fatigue =[];
             let nausea = [];
+            let date =[];
+            // let user= [];
             
             await api.getSymptoms('/api/viewcharts')
             // console.log(result)
@@ -26,13 +28,16 @@ export default function Chart() {
                     console.log(response)
                     bodypain.push(dataObj.symptoms[0].BodyPain);
                     fatigue.push(dataObj.symptoms[0].Fatigue);
-                    nausea.push(dataObj.symptoms[0].Nausea)
+                    nausea.push(dataObj.symptoms[0].Nausea);
+                    date.push(dataObj.date);
                 }
+                console.log(date);
                 // console.log(bodypain);
                 // console.log(severity);
             });
           createDataChart({
               labels: [
+                //   date,
                   'Sunday',
                   'Monday',
                   'Tuesday',
@@ -77,6 +82,14 @@ export default function Chart() {
           options={{
               maintainAspectRatio: false,
               scales: {
+                //   xAxes: [{
+                //       type: 'time',
+                //       time: {
+                //           displayFormats: {
+                //               week:
+                //           }
+                //       }
+                //   }],
                   yAxes: [{
                       ticks: {
                           beginAtZero: true,
