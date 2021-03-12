@@ -46,12 +46,7 @@ export default function UserPage () {
                 <div className="userbtns">
             <h2>Symptom Tracking</h2>
             <p>Enter any symptoms you wish to track on the form below, and click 'log symptoms' to submit.</p>
-                    <Row>
-
-                        <Button className="userbtn1"variant="secondary" bsSize="small" onClick={() => window.location.pathname="/addsymptom"}>Go Back</Button>
-                        <Button className="userbtn2" variant="secondary" bsSize="small" onClick={() => window.location.pathname="/viewcharts"}>View Dashboard</Button>
-
-                    </Row>
+                
 
                 </div>
                 
@@ -96,6 +91,11 @@ export default function UserPage () {
                                 </Col>
                             </Form.Group>
                     <Button variant="secondary" bsSize="small" onClick={handleFormSubmit}>Log Symptoms</Button>
+
+                    <Button className="userbtn2" variant="secondary" bsSize="small" onClick={() => window.location.pathname="/viewcharts"}>View Dashboard</Button>
+                    <Button className="userbtn1"variant="secondary" bsSize="small" onClick={() => window.location.pathname="/addsymptom"}>Go Back</Button>
+                    
+
                             </Form>
                     </Row>
             </div>
