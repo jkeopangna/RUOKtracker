@@ -10,21 +10,36 @@ export class MapContainer extends React.Component {
     };
   }
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
-    });
-  }
+  // componentDidMount() {
+  //   navigator.geolocation.getCurrentPosition(function(position) {
+  //     console.log("Latitude is :", position.coords.latitude);
+  //     console.log("Longitude is :", position.coords.longitude);
+  //   });
+  // }
+
+
 
   render() {
+
     return (
-      <Map google={this.props.google} zoom={14} center={this.state.getCurrentPosition}>
+      // <Map google={this.props.google} zoom={14} center={this.state.location}>
+      //   <Marker onClick={this.onMarkerClick} name={"Current location"} />
+      //   {/* <InfoWindow onClose={this.onInfoWindowClose}> */}
+      //     <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
+      //   {/* </InfoWindow> */}
+      // </Map>
+
+            <Map 
+            google={this.props.google} 
+            zoom={15} 
+            initialCenter={this.state.currentLocation}>
         <Marker onClick={this.onMarkerClick} name={"Current location"} />
         {/* <InfoWindow onClose={this.onInfoWindowClose}> */}
           <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
         {/* </InfoWindow> */}
       </Map>
+
+
     );
   }
 }
