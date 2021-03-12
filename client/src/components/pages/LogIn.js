@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import Footer from '../Footer';
-import FormComponent from '../Form';
+import LogInComponent from '../LogIn';
 
 
 
@@ -11,7 +11,7 @@ export default function LogIn () {
 
         <div className="login">
 
-        <FormComponent />
+        <LogInComponent />
         </div>
         <Footer />
    
