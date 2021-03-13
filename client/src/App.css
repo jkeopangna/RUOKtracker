@@ -121,7 +121,6 @@
   margin-top: 8px;
 }
 
-
 .map-container {
   display: flex;
   position: relative;
@@ -138,5 +137,4 @@
   height: auto;
   /* margin-left: 20px; */
   margin-right: 25px;
-
 }
