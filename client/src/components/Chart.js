@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Line, Bar, Pie} from 'react-chartjs-2';
 import {Container, Button} from 'react-bootstrap';
 import Footer from './Footer';
-import '../App.css'
+import '../App.css';
 
 
 //NEED TO FIND A WAY TO RENDER BY USER
@@ -12,26 +12,38 @@ import '../App.css'
 
 export default function Chart() {
     const [dataChart, createDataChart] = useState({});
+    // create a variable for the user ID
 
+    // axios.get("/user/charts" , uservar)
     useEffect(() => {
         const fetchData = async () => {
             let bodypain = [];
             let fatigue =[];
             let nausea = [];
             let date =[];
-            // let user= [];
+            let dataObj= [];
+            let user= [];
             
-            await api.getSymptoms('/api/viewcharts')
+            await 
+            // db.Symptoms.findOne()
+            api.getSymptoms('/api/viewcharts')
             // console.log(result)
             .then (response => {
                 for(let dataObj of response.data) {
+                  // dataObj.push(response.data)
+
                     console.log(response)
-                    bodypain.push(dataObj.symptoms[0].BodyPain);
-                    fatigue.push(dataObj.symptoms[0].Fatigue);
-                    nausea.push(dataObj.symptoms[0].Nausea);
-                    date.push(dataObj.date);
+                    // bodypain.push(dataObj.symptoms[0].BodyPain);
+                    // fatigue.push(dataObj.symptoms[0].Fatigue);
+                    // nausea.push(dataObj.symptoms[0].Nausea);
+                    // date.push(dataObj.date);
+                    user.push(dataObj.user)
+                    user.push(dataObj.symptoms)
+                    bodypain.push(dataObj.symptoms[0].BodyPain)
+                    // user.push(dataObj._id)
                 }
-                console.log(date);
+                console.log(user);
+                // console.log(date);
                 // console.log(bodypain);
                 // console.log(severity);
             });
