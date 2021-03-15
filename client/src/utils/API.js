@@ -30,4 +30,8 @@ logIn: function(user) {
     return axios.post("/api/users/register", user)
 },
 
+findAll: function(user) {
+    return axios.post('/api/user/chart', user)
 }
+
+} 

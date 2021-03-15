@@ -5,6 +5,7 @@ import { Line, Bar, Pie} from 'react-chartjs-2';
 import {Container, Button} from 'react-bootstrap';
 import Footer from './Footer';
 import '../App.css';
+import API from '../utils/API';
 
 
 //NEED TO FIND A WAY TO RENDER BY USER
@@ -13,39 +14,34 @@ import '../App.css';
 export default function Chart() {
     const [dataChart, createDataChart] = useState({});
     // create a variable for the user ID
+    
 
-    // axios.get("/user/charts" , uservar)
     useEffect(() => {
-        const fetchData = async () => {
-            let bodypain = [];
-            let fatigue =[];
-            let nausea = [];
-            let date =[];
-            let dataObj= [];
-            let user= [];
-            
-            await 
-            // db.Symptoms.findOne()
+      const fetchData = async () => {
+        let bodypain = [];
+        let fatigue =[];
+        let nausea = [];
+        let date =[];
+        let dataObj= [];
+        let user= [];
+        // let userId=[];
+        
+        
+        await 
+        // db.Symptoms.findOne()
+        logData()
             api.getSymptoms('/api/viewcharts')
-            // console.log(result)
             .then (response => {
+              // console.log(userId)
+              console.log(response)
                 for(let dataObj of response.data) {
-                  // dataObj.push(response.data)
-
-                    console.log(response)
-                    // bodypain.push(dataObj.symptoms[0].BodyPain);
-                    // fatigue.push(dataObj.symptoms[0].Fatigue);
-                    // nausea.push(dataObj.symptoms[0].Nausea);
-                    // date.push(dataObj.date);
-                    user.push(dataObj.user)
-                    user.push(dataObj.symptoms)
-                    bodypain.push(dataObj.symptoms[0].BodyPain)
-                    // user.push(dataObj._id)
+                  let userId = dataObj.user;
+                  console.log(userId)
+            //         // bodypain.push(dataObj.symptoms[0].BodyPain);
+            //         // fatigue.push(dataObj.symptoms[0].Fatigue);
+            //         // nausea.push(dataObj.symptoms[0].Nausea);
+            //         // date.push(dataObj.date);
                 }
-                console.log(user);
-                // console.log(date);
-                // console.log(bodypain);
-                // console.log(severity);
             });
           createDataChart({
               labels: [
@@ -81,6 +77,12 @@ export default function Chart() {
         fetchData();
     }, []);
 
+    const logData = () => {
+      let data = sessionStorage.getItem('userId')
+      console.log(data)
+      API.findAll({userId: data})
+        .then(res => console.log(res))
+    }
     return (
         <>
     
