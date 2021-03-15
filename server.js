@@ -1,5 +1,5 @@
 const express = require("express");
-
+const session = require("express-session");
 const mongoose = require("mongoose");
 const passport = require("passport");
 //const passport = require("./config/passport");
@@ -26,7 +26,8 @@ else {
 
 // Passport middleware
 app.use(passport.initialize());
-
+app.use(session({secret: "keyboard cat", resave: false, saveUninitialized: false}))
+app.use(passport.session())
 // Define API routes here
 const routes = require("./routes");
 app.use(routes);
