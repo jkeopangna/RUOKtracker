@@ -22,5 +22,7 @@ router
     //Create new User for DB
     .post(symptomsController.create)
 
+router.route('/api/chart')
+    .get(symptomsController.findAllby)
 
 module.exports = router;
