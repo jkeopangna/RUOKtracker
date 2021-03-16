@@ -25,4 +25,7 @@ router
 router.route('/api/chart')
     .get(symptomsController.findAllby)
 
+router.route('/api/user/chart')
+    .post(symptomsController.findAllby)
+
 module.exports = router;

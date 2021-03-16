@@ -15,9 +15,14 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-    findAllby: function(req,res ) {
-       const userid = req.body
-       db.Symptoms.findAll({users: userid})
+    findAllby: function(req, res ) {
+       const userInput = req.body 
+       db.Symptoms.find({user: userInput.userId})
+        .then(dbData => {
+            console.log(dbData[0].symptoms)
+            res.json(dbData)
+        })
+       console.log(userInput)
     }
 
 
