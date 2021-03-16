@@ -7,7 +7,6 @@
 
 .home,
 .userpage,
-/* .clinics, */
 .login,
 .userpage {
   display: flex;
@@ -120,6 +119,14 @@
   width: 20%;
   margin-top: 8px;
 }
+
+
+.barDiv, .lineDiv {
+  margin-top: 50px;
+}
+
+/* Find a clinic page styles */
+
 
 .map-container {
   display: flex;

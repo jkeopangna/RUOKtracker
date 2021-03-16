@@ -9,6 +9,7 @@ const LogInComponent = ({ history }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    
     try {
       const {
         data: { token },

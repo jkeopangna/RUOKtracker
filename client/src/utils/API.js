@@ -9,7 +9,7 @@ logSymptoms: function(symptoms) {
 
 // //JK// - Get the data to view the charts
 getSymptoms: function() {
-    return axios.get("/api/viewcharts")
+    return axios.get("/api/user/chart")
 },
 
 // //JK// - Get the data when someone logs in

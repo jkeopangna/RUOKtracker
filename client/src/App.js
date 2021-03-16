@@ -12,8 +12,7 @@ import Chart from './components/Chart';
 
 
 function App() {
-//   const [user, updateUser] = useState({})
-  //then will have to add props to each page and pass them down 
+
   return (
     <>
     <Router>
