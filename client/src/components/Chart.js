@@ -26,23 +26,40 @@ export default function Chart() {
         let user= [];
         // let userId=[];
         
+        const logData = () => {
+          let data = sessionStorage.getItem('userId')
+          console.log(data)
+          API.findAll({userId: data})
+            .then(res => {
+
+              console.log(res)
+            
+            for(let dataObj of res.data) {
+              console.log(dataObj)
+              bodypain.push(dataObj.symptoms[0].BodyPain)
+              fatigue.push(dataObj.symptoms[0].Fatigue)
+              nausea.push(dataObj.symptoms[0].Nausea)
+            }})
+            console.log(bodypain)
+            console.log(fatigue)
+            console.log(nausea)
+        }
         
         await 
         // db.Symptoms.findOne()
         logData()
-            api.getSymptoms('/api/viewcharts')
-            .then (response => {
-              // console.log(userId)
-              console.log(response)
-                for(let dataObj of response.data) {
-                  let userId = dataObj.user;
-                  console.log(userId)
-            //         // bodypain.push(dataObj.symptoms[0].BodyPain);
-            //         // fatigue.push(dataObj.symptoms[0].Fatigue);
-            //         // nausea.push(dataObj.symptoms[0].Nausea);
-            //         // date.push(dataObj.date);
-                }
-            });
+            // api.getSymptoms('/api/user/chart')
+            // .then (response => {
+            //   // console.log(userId)
+            //   console.log(response)
+            //     // for(let dataObj of response.data) {
+               
+            // //         // bodypain.push(dataObj.symptoms[0].BodyPain);
+            // //         // fatigue.push(dataObj.symptoms[0].Fatigue);
+            // //         // nausea.push(dataObj.symptoms[0].Nausea);
+            // //         // date.push(dataObj.date);
+            //     // }
+            // });
           createDataChart({
               labels: [
                 //   date,
@@ -77,12 +94,6 @@ export default function Chart() {
         fetchData();
     }, []);
 
-    const logData = () => {
-      let data = sessionStorage.getItem('userId')
-      console.log(data)
-      API.findAll({userId: data})
-        .then(res => console.log(res))
-    }
     return (
         <>
     
