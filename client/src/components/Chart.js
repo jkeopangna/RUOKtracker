@@ -10,7 +10,7 @@ import API from '../utils/API';
 
 export default function Chart() {
     const [dataChart, createDataChart] = useState({});
- 
+    const [num, setNum] = useState(0)
     useEffect(() => {
       const fetchData = async () => {
         let bodypain = [];
@@ -46,7 +46,7 @@ export default function Chart() {
         let timeStamp = date
           createDataChart({
 
-              labels: timeStamp,
+              // labels: timeStamp,
               // [
               //   //   date,
               //     'Sunday',
@@ -78,21 +78,21 @@ export default function Chart() {
         }
         
         fetchData();
+        setNum(num+1);
     }, []);
 
+    useEffect (() => {
+      window.resizeTo(window.innerWidth - 2, window.innerHeight - 2)
+    }, [dataChart])
   
     return (
-
-      
-
         <>
-      
-
+    
         <Container fluid className="chartcontainer">
         <h3>Dashboard</h3>
    
         <div className="barDiv">
-
+        {dataChart.datasets && dataChart.datasets.length &&
           <Bar data={dataChart}
           height={300}
           width={500}
@@ -113,6 +113,7 @@ export default function Chart() {
               }
           }}
 />
+}
         </div>
 
         <div className="lineDiv">
@@ -137,6 +138,7 @@ export default function Chart() {
               }
           }}
           />
+          
         </div>
 
         
