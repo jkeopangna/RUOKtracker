@@ -13,7 +13,7 @@ const seeds = [
             Nausea: 3,
             BodyPain: 4,
             Fatigue: 2,
-            date: new Date(Date.now())
+            date: { type: Date, default: Date("<YYYY-mm-dd>")}
         }]
     },
     {
@@ -26,7 +26,7 @@ const seeds = [
             Nausea: 10,
             BodyPain: 6,
             Fatigue: 4,
-            date: new Date(Date.now())
+            date: { type: Date, default: Date("<YYYY-mm-dd>")}
         }]
     }
 ];
