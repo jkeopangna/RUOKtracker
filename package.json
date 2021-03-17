@@ -27,7 +27,6 @@
     "chart.js": "^2.9.4",
     "express": "^4.16.3",
     "express-session": "^1.17.1",
-    "google-maps-react": "^2.0.6",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
@@ -35,10 +34,6 @@
     "mongoose": "^5.11.18",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "react-bootstrap": "^1.5.0",
-    "react-chartjs-2": "^2.11.1",
-    "react-places-autocomplete": "^7.3.0",
-    "react-router-dom": "^5.2.0",
     "validator": "^13.5.2"
   }
 }
