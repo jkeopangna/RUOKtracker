@@ -7,7 +7,7 @@ const symptomSchema = new Schema ({
     // Nausea: {type: Number },
     // BodyPain: {type: Number },
     // Fatigue: {type: Number }, 
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date("<YYYY-mm-dd>")}
 });
 
 const Symptoms = mongoose.model("userSymptoms", symptomSchema);
