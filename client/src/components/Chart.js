@@ -78,9 +78,13 @@ export default function Chart() {
     }, []);
 
     const logData = () => {
-      let data = sessionStorage.getItem('userId')
+      
+      let data = sessionStorage.getItem('userId', 'symptoms')
       console.log(data)
-      API.findAll({userId: data})
+      API.findAll({
+        userId: data,
+   
+      })
         .then(res => console.log(res))
     }
     return (
