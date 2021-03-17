@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import "./Map.css";
+import MapComp from "./MapComp";
 import { Map, Marker, GoogleApiWrapper, Listing } from "google-maps-react";
 import { render } from "react-dom";
 
@@ -22,10 +23,13 @@ export class MapContainer extends React.Component {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        this.setState({
-          userLocation: { lat: latitude, lng: longitude },
-          loading: false,
-        });
+        this.setState(
+          {
+            userLocation: { lat: latitude, lng: longitude },
+            loading: false,
+          },
+          () => console.log("comp did mount ", this.state)
+        );
         // Call function
         // this.props.passUpCoordinates({ lat: latitude, lng: longitude })
       },
@@ -44,8 +48,10 @@ export class MapContainer extends React.Component {
       .then((results) => getLatLng(results[0]))
       .then((latLng) => {
         console.log("Success", latLng);
-        this.setState({ address });
-        this.setState({ center: latLng });
+        // this.setState({ address });
+        this.setState({ userLocation: latLng }, () => {
+          console.log(latLng, this.state);
+        });
       })
       .catch((error) => console.error("Error", error));
   };
@@ -107,16 +113,21 @@ export class MapContainer extends React.Component {
             </div>
           )}
         </PlacesAutocomplete>
-
-        <Map
+        <MapComp
           style={style}
           google={google}
-          initialCenter={userLocation}
+          initialCenter={this.state.userLocation}
+          center={this.state.userLocation}
+        />
+        {/* <Map
+          style={style}
+          google={google}
+          initialCenter={this.state.userLocation}
           center={this.handleSelect}
           zoom={15}
         >
           <Marker onReady={this.onReady} name={"Current location"} />
-        </Map>
+        </Map> */}
       </div>
     );
   }
