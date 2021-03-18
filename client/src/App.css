@@ -141,21 +141,25 @@
   margin-top: 8px;
 }
 
-
 .clinics {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  margin-top: -250px;
+  margin-top: -280px;
 }
 
+.pacInput {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 
-.barDiv, .lineDiv {
+.barDiv,
+.lineDiv {
   margin-top: 50px;
   width: 100%;
-  
 }
 
 /* Find a clinic page styles */
@@ -163,10 +167,10 @@
 .map-container {
   display: flex;
   position: relative;
-  width: 65vw;
-  height: 65vh;
+  width: 70vw;
+  height: 75vh;
   justify-content: center;
-  margin-top: -250px;
+  margin-top: -280px;
 }
 /* Sidebar Styles */
 
