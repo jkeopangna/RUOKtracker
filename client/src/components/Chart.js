@@ -38,22 +38,26 @@ export default function Chart() {
             console.log(fatigue)
             console.log(nausea)
             console.log(date)
-          }
-          const newDate = new Date("2021-03-17T21:29:46.780Z");
-          const year = newDate.getFullYear();
-          console.log(year);
-          const month = newDate.getMonth()+1;
-          console.log(month)
-         
-          const label = (month) + "-" + (year);
-          console.log(label)
+        }
         
         await 
+        // db.Symptoms.findOne()
         logData()
-
+        let timeStamp = date;
        
           createDataChart({
-            
+
+              labels: timeStamp,
+              // [
+              //   //   date,
+              //     'Sunday',
+              //     'Monday',
+              //     'Tuesday',
+              //     'Wednesday',
+              //     'Thursday',
+              //     'Friday',
+              //     'Saturday'
+              // ],
               datasets: [{
                   label: 'Body Pain',
                   data: bodypain,
@@ -96,17 +100,13 @@ export default function Chart() {
           options={{
               maintainAspectRatio: false,
               scales: {
-                xAxes:[{
-                  scaleLabel:{
-                    display: true,
-                    labelString: 'Symptoms'
-                  }
-                }],
+              //   xAxes: [{
+              //     type: 'time',
+              //     time: {
+              //         unit: 'month'
+              //     }
+              // }],
                   yAxes: [{
-                    scaleLabel:{
-                      display: true,
-                      labelString: 'Severity'
-                    },
                       ticks: {
                           beginAtZero: true,
                       }
@@ -125,17 +125,13 @@ export default function Chart() {
           options={{
               maintainAspectRatio: false,
               scales: {
-                xAxes:[{
-                  scaleLabel:{
-                    display: true,
-                    labelString: 'Symptoms'
-                  }
-                }],
+              //   xAxes: [{
+              //     type: 'time',
+              //     time: {
+              //         unit: 'month'
+              //     }
+              // }],
                   yAxes: [{
-                    scaleLabel:{
-                      display: true,
-                      labelString: 'Severity'
-                    },
                       ticks: {
                           beginAtZero: true,
                       }
