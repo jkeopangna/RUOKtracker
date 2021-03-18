@@ -11,7 +11,15 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //JK// - Connect to Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms");
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/UserSymptoms",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

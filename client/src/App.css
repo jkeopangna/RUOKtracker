@@ -97,7 +97,7 @@
 .chartcontainer {
   margin-bottom: 100px;
   margin-top: 100px;
-  max-width: 70%;
+  max-width: 70vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,6 +136,8 @@
 .barDiv,
 .lineDiv {
   margin-top: 50px;
+  width: 100%;
+  
 }
 
 /* Find a clinic page styles */
