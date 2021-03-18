@@ -30,6 +30,11 @@ const LogInComponent = ({ history }) => {
   const { username, password } = formValues;
 
   return (
+    <>
+    <div className='signinform'>
+      <h1>Sign-in to your account</h1>
+      <hr></hr>
+
     <Form onSubmit={handleLogin}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Username</Form.Label>
@@ -52,13 +57,17 @@ const LogInComponent = ({ history }) => {
           placeholder="Password"
         />
       </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+
       <Button type="submit" variant="dark">
         Submit
       </Button>
     </Form>
+    </div>
+    <div className="login">
+
+    <img src="./images/journal.jpg" alt="signing in" className='loginimg'></img>
+    </div>
+</>
   );
 };
 
