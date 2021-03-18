@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import "./Map.css";
 import MapComp from "./MapComp";
-import { Map, Marker, GoogleApiWrapper, Listing } from "google-maps-react";
-import { render } from "react-dom";
+import { GoogleApiWrapper } from "google-maps-react";
 
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -57,11 +56,10 @@ export class MapContainer extends React.Component {
   };
 
   render() {
-    const { loading, userLocation } = this.state;
+    const { loading } = this.state;
     const { google } = this.props;
     const style = {
       display: "block",
-      margin: "0 auto",
       width: "60%",
       height: "75%",
     };
@@ -69,136 +67,64 @@ export class MapContainer extends React.Component {
       return null;
     }
     return (
-      <div id="googleMap">
-        <PlacesAutocomplete
-          value={this.state.address}
-          onChange={this.handleChange}
-          onSelect={this.handleSelect}
-        >
-          {({
-            getInputProps,
-            suggestions,
-            getSuggestionItemProps,
-            loading,
-          }) => (
-            <div>
-              <input
-                {...getInputProps({
-                  placeholder: "Search Places ...",
-                  className: "location-search-input",
-                })}
-              />
-              <div className="autocomplete-dropdown-container">
-                {loading && <div>Loading...</div>}
-                {suggestions.map((suggestion) => {
-                  const className = suggestion.active
-                    ? "suggestion-item--active"
-                    : "suggestion-item";
-                  // inline style for demonstration purpose
-                  const style = suggestion.active
-                    ? { backgroundColor: "#fafafa", cursor: "pointer" }
-                    : { backgroundColor: "#ffffff", cursor: "pointer" };
-                  return (
-                    <div
-                      {...getSuggestionItemProps(suggestion, {
-                        className,
-                        style,
-                      })}
-                    >
-                      <span>{suggestion.description}</span>
-                    </div>
-                  );
-                })}
+      <div className="mapJs">
+        <div className="pacInput">
+          <PlacesAutocomplete
+            value={this.state.address}
+            onChange={this.handleChange}
+            onSelect={this.handleSelect}
+          >
+            {({
+              getInputProps,
+              suggestions,
+              getSuggestionItemProps,
+              loading,
+            }) => (
+              <div>
+                <input
+                  {...getInputProps({
+                    placeholder: "Search Places ...",
+                    className: "location-search-input",
+                  })}
+                />
+                <div className="autocomplete-dropdown-container">
+                  {loading && <div>Loading...</div>}
+                  {suggestions.map((suggestion) => {
+                    const className = suggestion.active
+                      ? "suggestion-item--active"
+                      : "suggestion-item";
+                    // inline style for demonstration purpose
+                    const style = suggestion.active
+                      ? { backgroundColor: "#fafafa", cursor: "pointer" }
+                      : { backgroundColor: "#ffffff", cursor: "pointer" };
+                    return (
+                      <div
+                        {...getSuggestionItemProps(suggestion, {
+                          className,
+                          style,
+                        })}
+                      >
+                        <span>{suggestion.description}</span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
-        </PlacesAutocomplete>
-        <MapComp
-          style={style}
-          google={google}
-          initialCenter={this.state.userLocation}
-          center={this.state.userLocation}
-        />
-        {/* <Map
-          style={style}
-          google={google}
-          initialCenter={this.state.userLocation}
-          center={this.handleSelect}
-          zoom={15}
-        >
-          <Marker onReady={this.onReady} name={"Current location"} />
-        </Map> */}
+            )}
+          </PlacesAutocomplete>
+        </div>
+        <div>
+          <MapComp
+            style={style}
+            google={google}
+            initialCenter={this.state.userLocation}
+            center={this.state.userLocation}
+          />
+        </div>
       </div>
     );
   }
 }
-
-// export class MapContainer extends Component {
-
-//   state = {
-//     currentLocation: {},
-//   }
-
-// fetchPlaces(mapProps, map) {
-//   const {google} = mapProps;
-//   const service = new google.maps.places.PlacesService(map);
-//   // ...
-//   service.nearbySearch(map, mapProps);
-// }
-
-// export class MapContainer extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//     };
-//   }
-
-// handleInputChange(event) {
-//   const { name, value } = event.target;
-//   setFormObject({...formObject, [name]: value})
-// };
-
-// componentDidMount() {
-//   navigator.geolocation.getCurrentPosition(function(position) {
-//     console.log("Latitude is :", position.coords.latitude);
-//     console.log("Longitude is :", position.coords.longitude);
-//   });
-// }
-
-// render() {
-
-//   return (
-//     <Map google={this.props.google} zoom={14} center={this.state.currentLocation}>
-//       <Marker onClick={this.onMarkerClick} name={"Current location"} />
-//       {/* <InfoWindow onClose={this.onInfoWindowClose}> */}
-//         <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
-//       {/* </InfoWindow> */}
-//     </Map>
-
-//       <Map
-//       google={this.props.google}
-//       zoom={15}
-//       initialCenter={this.state.currentLocation}>
-//   <Marker onClick={this.onMarkerClick} name={"Current location"} />
-//   {/* <InfoWindow onClose={this.onInfoWindowClose}> */}
-//     <div>{/* <h1>{this.state.selectedPlace.name}</h1> */}</div>
-//   {/* </InfoWindow> */}
-// </Map>
-
-//     );
-//   }
-// }
-
-// render() {
-//   return (
-//     <Map google={this.props.google}
-//       onReady={this.fetchPlaces}
-//       visible={false} >
-//         <Listing places={this.state.places} />
-//     </Map>
-//   )
-// }
-// }
 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBTC42wrW7FeVF9Ff1JlC1HlsVvBg5rda4",
