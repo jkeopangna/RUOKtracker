@@ -120,13 +120,6 @@
   margin-top: -280px;
 }
 
-/* .mapJs {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  align-self: center;
-} */
-
 .pacInput {
   display: flex;
   justify-content: center;
@@ -137,7 +130,6 @@
 .lineDiv {
   margin-top: 50px;
   width: 100%;
-  
 }
 
 /* Find a clinic page styles */
@@ -145,11 +137,8 @@
 .map-container {
   display: flex;
   position: relative;
-  /* align-items: flex-end; */
-  /* width: 65vw; */
   width: 70vw;
   height: 75vh;
-
   justify-content: center;
   margin-top: -280px;
 }
