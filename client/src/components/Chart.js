@@ -46,7 +46,7 @@ export default function Chart() {
         let timeStamp = date
           createDataChart({
 
-              // labels: timeStamp,
+              labels: timeStamp,
               // [
               //   //   date,
               //     'Sunday',
