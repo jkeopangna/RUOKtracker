@@ -32,7 +32,8 @@ export default function Chart() {
               bodypain.push(dataObj.symptoms[0].BodyPain)
               fatigue.push(dataObj.symptoms[0].Fatigue)
               nausea.push(dataObj.symptoms[0].Nausea)
-              date.push(dataObj.date)
+              let newStamp = (dataObj.date.split("T")[0])
+              date.push(newStamp)
             }})
             console.log(bodypain)
             console.log(fatigue)
@@ -44,20 +45,19 @@ export default function Chart() {
         // db.Symptoms.findOne()
         logData()
         let timeStamp = date;
+      //   let newStamp = "2021-03-16T15:03:56.914Z";
+      //   // newStamp.substring(0,10);
+        
+
+      // console.log(newStamp.split("T")[0]);
+      // console.log(newStamp)
+        
+        // newStamp.toLocaleString();
        
           createDataChart({
 
               labels: timeStamp,
-              // [
-              //   //   date,
-              //     'Sunday',
-              //     'Monday',
-              //     'Tuesday',
-              //     'Wednesday',
-              //     'Thursday',
-              //     'Friday',
-              //     'Saturday'
-              // ],
+            
               datasets: [{
                   label: 'Body Pain',
                   data: bodypain,
